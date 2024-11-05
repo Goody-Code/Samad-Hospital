@@ -1091,5 +1091,14 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    const baseURL = "https://goody-code.github.io/Samad-Hospital/";
+    $("link[href^='assets/'], script[src^='assets/'], img[src^='assets/']").each(function() {
+      const attr = $(this).is("link") || $(this).is("a") ? "href" : "src";
+      $(this).attr(attr, baseURL + $(this).attr(attr));
+    });
+  });
+</script>
 </html>
